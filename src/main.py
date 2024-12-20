@@ -20,7 +20,7 @@ def main():
 
 
     # child_maker
-    df_children = CM.add_children(df, 5)
+    df_children = CM.add_children(df)
     df_children.to_excel(config['output_file_path_child_maker'])
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ import random
 def generation_of_alleles_for_the_child(allele_list):
     return (allele_list[random.randint(0, 1)], allele_list[random.randint(2, 3)])
 
-def add_children(df, nums_children):
+def add_children(df):
     dict_data = df.to_dict()
     calc_colum_index = 0
     calc_name = 0
@@ -17,13 +17,16 @@ def add_children(df, nums_children):
         calc_colum_index += 1
 
         if calc_colum_index % 2 == 0:
-            new_colum_past = past_colum.copy()
-            new_colum = colum.copy()
+            #new_colum_past = past_colum.copy()
+            #new_colum = colum.copy()
+            new_colum_past = {}
+            new_colum = {}
             past_name = None
 
             for name in list(past_colum.keys()):  # Создаем список ключей для безопасной итерации
                 calc_name += 1
-
+                new_colum_past[name] = past_colum[name]
+                new_colum[name] = colum[name]
                 if calc_name % 2 == 0:
                     list_frequency.extend([
                         past_colum[past_name],

@@ -10,8 +10,8 @@ allele_frequency: {
 }
 
 # Путь до файла на основании которого child_maker.py будет генерировать детей
-output_file_path_creator_of_individuals: './files/creator_of_individuals/output.xlsx'
+output_file_path_creator_of_individuals: './files/creator_of_individuals/output_individ.xlsx'
 output_file_path_creator_of_individuals_join: './files/creator_of_individuals/output_join.xlsx'
 
 # Путь в который child_maker.py будет сохронять файл
-output_file_path_child_maker: './files/child_maker/output.xlsx'
+output_file_path_child_maker: './files/child_maker/output_children.xlsx'
