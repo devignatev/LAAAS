@@ -1,5 +1,4 @@
 import pandas as pd
-import yaml
 import random
 
 '''
@@ -137,7 +136,6 @@ def generate_table(allele_frequency, name_of_individuals):
         for i in name_of_individuals:
             for j in range(1, name_of_individuals[i] + 1):
                 table_colum_number.append(i + str(j))
-    table_colum_number
 
     # Приступаем к генерации аллелей индивидов
     for allele in allele_frequency:

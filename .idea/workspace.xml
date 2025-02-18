@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Реализованно создание детей от родителей, но работает только с 1 ребенком">
+    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной">
+      <change afterPath="$PROJECT_DIR$/src/generate_pi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/сalculation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/child_maker.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/child_maker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config_file.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config_file.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creator_of_individuals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/creator_of_individuals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +53,13 @@
   &quot;keyToString&quot;: {
     &quot;Python.child_maker.executor&quot;: &quot;Run&quot;,
     &quot;Python.creator_of_individuals.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_pi.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.сalculation.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -116,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734552144901</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной">
+      <option name="closed" value="true" />
+      <created>1734667612424</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734667612424</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +149,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Реализованно создание детей от родителей, но работает только с 1 ребенком" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализованно создание детей от родителей, но работает только с 1 ребенком" />
+    <MESSAGE value="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной" />
+    <option name="LAST_COMMIT_MESSAGE" value="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной" />
   </component>
 </project>
