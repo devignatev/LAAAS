@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной">
-      <change afterPath="$PROJECT_DIR$/src/generate_pi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/сalculation.py" afterDir="false" />
+    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Доделан поиск ложно-положительных отцов в консоли">
+      <change afterPath="$PROJECT_DIR$/src/normalizated.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/child_maker.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/child_maker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config_file.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config_file.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/creator_of_individuals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/creator_of_individuals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generate_pi.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/find_father.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/сalculation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,10 @@
     &quot;Python.creator_of_individuals.executor&quot;: &quot;Run&quot;,
     &quot;Python.generate_pi.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.normalizated.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test3.executor&quot;: &quot;Run&quot;,
     &quot;Python.сalculation.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -67,7 +70,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.normalizated">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="LAAAS" />
       <option name="ENV_FILES" value="" />
@@ -91,6 +94,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="normalizated" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="LAAAS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (LAAAS)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/normalizated.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.normalizated" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -132,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734667612424</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Доделан поиск ложно-положительных отцов в консоли">
+      <option name="closed" value="true" />
+      <created>1739866101334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739866101334</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +188,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Реализованно создание детей от родителей, но работает только с 1 ребенком" />
     <MESSAGE value="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной" />
-    <option name="LAST_COMMIT_MESSAGE" value="Полностью закончнена реализация генерации детей, согласованно с Ксенией Валерьевной" />
+    <MESSAGE value="Доделан поиск ложно-положительных отцов в консоли" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доделан поиск ложно-положительных отцов в консоли" />
   </component>
 </project>
