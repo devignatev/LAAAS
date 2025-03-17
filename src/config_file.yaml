@@ -97,4 +97,4 @@ output_file_path_child_maker: './files/child_maker/output_children.xlsx'
 child_maker_nums: 2
 
 # ==============================normalization==============================
-normalization_input_file: '/Users/mihailignatev/PycharmProjects/LAAAS/YAK_new.xlsx'
+normalization_input_file: '/Users/mihailignatev/PycharmProjects/LAAAS/YAK.xlsx'

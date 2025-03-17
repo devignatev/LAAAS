@@ -70,10 +70,10 @@ def calculation_pi_and_pp(dict_mother, dict_children, frequency):
 {'D20S1082': {11.0: 0.46258503401360546, 15.0: 0.2653061224489796, 12.0: 0.14965986394557823, 16.0: 0.05442176870748299,
 14.0: 0.04081632653061224, 13.0: 0.02040816326530612, 9.0: 0.006802721088435374}, 'D6S474': {15: 0.20134228187919462,
 14: 0.3288590604026846, 18.0: 0.21476510067114093, 17.0: 0.08053691275167785, 16.0: 0.174496644295302}, ... }
-
 '''
 
 def counting_frequencies_from_file(df):
+    print(df)
     frequencies = {}
     allel = [el.split('_')[0] for el in df.columns.to_list() if int(el.split('_')[1]) % 2 != 0]
     for el in allel:
@@ -81,6 +81,8 @@ def counting_frequencies_from_file(df):
     df_dict = df.to_dict('index')
     for individual in df_dict:
         for locus in df_dict[individual]:
+            print(individual, locus)
+            print(df_dict[individual][locus])
             if str(df_dict[individual][locus]) != 'nan' and str(df_dict[individual][locus]) != 'OL':
                 if df_dict[individual][locus] in frequencies[locus.split('_')[0]]:
                     calc = frequencies[locus.split('_')[0]][df_dict[individual][locus]]

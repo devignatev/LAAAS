@@ -10,12 +10,12 @@ import yaml
 
 def normalizated(df):
     frequencies = CALC.counting_frequencies_from_file(df)
-    print(frequencies)
+    print(df)
 
 if __name__ == '__main__':
     path_config = './config_file.yaml'
     with open(path_config, 'r') as yaml_file:
         config = yaml.load(yaml_file, Loader=yaml.FullLoader)
 
-    df = pd.read_excel(config['normalization_input_file'], index_col=0)
+    df = pd.read_excel(config['normalization_input_file'], index_col=0, )
     normalizated(df)

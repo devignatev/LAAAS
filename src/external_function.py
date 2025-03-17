@@ -74,3 +74,50 @@ def frequencies_in_exel(frequencies, path_save):
     df = pd.DataFrame(frequencies, index=dict_allels)
     print(df)
     df.to_excel(path_save)
+
+'''
+Функция которая проставляет локусам окончания "_1" и "_2" при их повторении
+
+Вход:
+                  D20S1082  D20S1082.1 D6S474  ...  D7S1517.1 Penta E  Penta E.1
+ASTR_A30_Cher_02      11.0        15.0     15  ...        NaN    14.0         16
+ASTR_A30_Cher_03      11.0         NaN     14  ...       22.0    15.0         17
+ASTR_A30_Cher_04      11.0        15.0     15  ...        NaN    17.0        NaN
+ASTR_A30_Cher_05      11.0        12.0     15  ...       25.0    15.0         16
+ASTR_A30_Cher_06      11.0        15.0     15  ...       24.0    12.0        NaN
+...                    ...         ...    ...  ...        ...     ...        ...
+ASTR_A30_Cher_91      12.0         NaN     14  ...        NaN     NaN        NaN
+ASTR_A30_Cher_93       NaN         NaN    NaN  ...        NaN     NaN        NaN
+ASTR_A30_Cher_94       NaN         NaN    NaN  ...        NaN     NaN        NaN
+ASTR_A30_Cher_95       NaN         NaN    NaN  ...       25.0    10.0         13
+ASTR_A30_Cher_96       NaN         NaN    NaN  ...        NaN     NaN        NaN
+
+[94 rows x 50 columns]
+
+Выход:
+                  D20S1082_1  D20S1082_2  ... Penta E_1  Penta E_2
+ASTR_A30_Cher_02        11.0        15.0  ...      14.0         16
+ASTR_A30_Cher_03        11.0         NaN  ...      15.0         17
+ASTR_A30_Cher_04        11.0        15.0  ...      17.0        NaN
+ASTR_A30_Cher_05        11.0        12.0  ...      15.0         16
+ASTR_A30_Cher_06        11.0        15.0  ...      12.0        NaN
+...                      ...         ...  ...       ...        ...
+ASTR_A30_Cher_91        12.0         NaN  ...       NaN        NaN
+ASTR_A30_Cher_93         NaN         NaN  ...       NaN        NaN
+ASTR_A30_Cher_94         NaN         NaN  ...       NaN        NaN
+ASTR_A30_Cher_95         NaN         NaN  ...      10.0         13
+ASTR_A30_Cher_96         NaN         NaN  ...       NaN        NaN
+
+[94 rows x 50 columns]
+'''
+def uniqueness_locus(df):
+    list = df.columns.to_list()
+    new_list = []
+    for i in list:
+        if len(i.split('.')) == 2:
+            i = i.split('.')[0] + '_2'
+        else:
+            i = i + '_1'
+        new_list.append(i)
+    new_df = df.set_axis(new_list, axis=1)
+    return new_df
