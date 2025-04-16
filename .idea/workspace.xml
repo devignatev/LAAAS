@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Сделана функция перевода частот в вид exel таблицы">
-      <change afterPath="$PROJECT_DIR$/descriptopn.txt" afterDir="false" />
+    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Добавлен вайл description в котором представленно описание проекта!">
+      <change afterPath="$PROJECT_DIR$/test/CountingLR/CountingLR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descriptopn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/child_maker.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config_file.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config_file.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/external_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creator_of_individuals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/creator_of_individuals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/external_function.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/normalizated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/normalizated.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/сalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/сalculation.py" afterDir="false" />
     </list>
@@ -50,7 +54,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.CountingLR.executor&quot;: &quot;Run&quot;,
     &quot;Python.child_maker.executor&quot;: &quot;Run&quot;,
+    &quot;Python.countingFREQUENCIES.executor&quot;: &quot;Run&quot;,
+    &quot;Python.countingLR.executor&quot;: &quot;Run&quot;,
     &quot;Python.creator_of_individuals.executor&quot;: &quot;Run&quot;,
     &quot;Python.external_function.executor&quot;: &quot;Run&quot;,
     &quot;Python.generate_pi.executor&quot;: &quot;Run&quot;,
@@ -67,6 +74,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/CountingLR" />
+      <recent name="$PROJECT_DIR$/files/External files" />
+      <recent name="$PROJECT_DIR$/files" />
+      <recent name="$PROJECT_DIR$/files/normalizated" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -186,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741011889616</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Добавлен вайл description в котором представленно описание проекта!">
+      <option name="closed" value="true" />
+      <created>1742193904243</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742193904243</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,6 +226,7 @@
     <MESSAGE value="Доделан поиск ложно-положительных отцов в консоли" />
     <MESSAGE value="Сделана функция считывания частот&#10;&#10;Начата разработка модуля нормализации файла" />
     <MESSAGE value="Сделана функция перевода частот в вид exel таблицы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделана функция перевода частот в вид exel таблицы" />
+    <MESSAGE value="Добавлен вайл description в котором представленно описание проекта!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен вайл description в котором представленно описание проекта!" />
   </component>
 </project>

@@ -1,5 +1,5 @@
 from pandas.core.methods.to_dict import to_dict
-
+from decimal import Decimal, getcontext
 '''
 Функция которая расчитывает значение q, которое например нужно для расчета pp, pi
 
@@ -73,23 +73,24 @@ def calculation_pi_and_pp(dict_mother, dict_children, frequency):
 '''
 
 def counting_frequencies_from_file(df):
-    print(df)
     frequencies = {}
-    allel = [el.split('_')[0] for el in df.columns.to_list() if int(el.split('_')[1]) % 2 != 0]
-    for el in allel:
+    locus_list = [el.split('_')[0] for el in df.columns.to_list() if int(el.split('_')[1]) % 2 != 0]
+
+    for el in locus_list:
         frequencies[el] = {}
     df_dict = df.to_dict('index')
     for individual in df_dict:
         for locus in df_dict[individual]:
-            print(individual, locus)
-            print(df_dict[individual][locus])
-            if str(df_dict[individual][locus]) != 'nan' and str(df_dict[individual][locus]) != 'OL':
-                if df_dict[individual][locus] in frequencies[locus.split('_')[0]]:
-                    calc = frequencies[locus.split('_')[0]][df_dict[individual][locus]]
+            allel = df_dict[individual][locus]
+            if ',' in str(allel):
+                allel = allel.replace(',', '.')
+            if str(allel) != 'nan' and str(allel) != 'OL':
+                if allel in frequencies[locus.split('_')[0]]:
+                    calc = frequencies[locus.split('_')[0]][allel]
                     calc += 1
-                    frequencies[locus.split('_')[0]][df_dict[individual][locus]] = calc
+                    frequencies[locus.split('_')[0]][allel] = calc
                 else:
-                    frequencies[locus.split('_')[0]][df_dict[individual][locus]] = 1
+                    frequencies[locus.split('_')[0]][allel] = 1
 
     for locus in frequencies:
         summ = 0

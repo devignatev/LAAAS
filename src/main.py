@@ -1,7 +1,6 @@
 import src.creator_of_individuals as CoI
-import src.child_maker as CM
-import src.find_father as GPI
-import find_father as FindFather
+import src.creator_of_individuals as GPI
+import src.find_father as FindFather
 import yaml
 
 def main():
@@ -12,7 +11,7 @@ def main():
     # creator_of_individuals
     allele_frequency = (config['allele_frequency'])
     name_of_individuals = {
-        'YAK': 100000
+        'YAK': 100
     }
     df = CoI.generate_table(allele_frequency=allele_frequency,
                         name_of_individuals=name_of_individuals)
@@ -20,13 +19,13 @@ def main():
     df.to_excel(config['output_file_path_creator_of_individuals'])
 
     # child_maker
-    ##df_children = CM.add_children(df, config['child_maker_nums'])
-    ##df_children.to_excel(config['output_file_path_child_maker'])
+    df_children = CoI.add_children(df, config['child_maker_nums'])
+    df_children.to_excel(config['output_file_path_child_maker'])
 
     # generate_pi
     #df_gpi = GPI.generate_table(df_children, allele_frequency)
 
-    #FindFather.find_father(df_children, allele_frequency)
+    FindFather.find_father(df_children, allele_frequency)
 
 if __name__ == '__main__':
     main()

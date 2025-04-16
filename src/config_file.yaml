@@ -87,14 +87,14 @@ rus_dict: {"CSF1PO": {7: 0.0004, 8: 0.0012, 9: 0.0438, 10: 0.2824, 11: 0.2882, 1
            }
 
 # Путь до файла на основании которого child_maker.py будет генерировать детей
-output_file_path_creator_of_individuals: './files/creator_of_individuals/output_individ.xlsx'
-output_file_path_creator_of_individuals_join: './files/creator_of_individuals/output_join.xlsx'
+output_file_path_creator_of_individuals: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Creator_of_individuals/output_individ.xlsx'
+output_file_path_creator_of_individuals_join: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Creator_of_individuals/output_join.xlsx'
 
 # Путь в который child_maker.py будет сохронять файл
-output_file_path_child_maker: './files/child_maker/output_children.xlsx'
+output_file_path_child_maker: '/Users/mihailignatev/PycharmProjects/LAAAS/files/child_maker/output_children.xlsx'
 
 # Колличество детей которое нужно сгенерировать
 child_maker_nums: 2
 
-# ==============================normalization==============================
-normalization_input_file: '/Users/mihailignatev/PycharmProjects/LAAAS/YAK.xlsx'
+# ==============================normalizated==============================
+normalization_input_file: '/Users/mihailignatev/PycharmProjects/LAAAS/files/External files/KV files/якуты.xlsx'
