@@ -16,8 +16,11 @@ import src.сalculation as CALC
 '''
 
 def find_father(df, frequency):
-    calc = 0
-    new_df = pd.DataFrame({'№': [], 'Sex': [], 'Child_ID': [], 'Status': []})
+    data = []
+    index_list = []
+    index_parents_list = []
+    pi_list = []
+    pp_list = []
     for index, row in df.iterrows():
 
         # Отбор детей
@@ -32,5 +35,10 @@ def find_father(df, frequency):
                     pi, pp = CALC.calculation_pi_and_pp(row.to_dict(), row_parents.to_dict(), frequency)
                     if pi >= 400 or pp >= 0.9975:
                         if index.split('+')[0] != index_parents and index.split('+')[1].split('-')[0] != index_parents:
-                            calc += 1
-                            #print(calc, index, index_parents)
+                            print(index, index_parents, pi, pp)
+                            index_list.append(index)
+                            index_parents_list.append(index_parents)
+                            pi_list.append(pi)
+                            pp_list.append(pp)
+    return pd.DataFrame({'Индивид': index_list, 'Ложно-положительный индивид': index_parents_list,
+                         'pi': pi_list, 'pp': pp_list})

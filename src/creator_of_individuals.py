@@ -170,7 +170,7 @@ def generation_of_alleles_for_the_child(allele_list):
     return (allele_list[random.randint(0, 1)], allele_list[random.randint(2, 3)])
 
 '''
-Функция добовления детей в таблицу
+Функция добовления родителей в таблицу
 
 Вход:
 Функция для добавления потомков в таблицу
@@ -211,7 +211,8 @@ YAK99+YAK100-2        15.0        11.0  ...       21.0       20.0
 
 [200 rows x 50 columns]
 '''
-def add_children(df, num_children=1):
+
+def add_parents(df, num_children=1):
     dict_data = df.to_dict()  # Преобразуем DataFrame в словарь для удобства обработки
     calc_colum_index = 0  # Счетчик колонок
     calc_name = 0  # Счетчик имен для пар родителей
@@ -286,12 +287,8 @@ def protection_against_incest(ind_1, ind_2):
     return False
 
 '''
-Функция проверяет наличие инцеста
-
+Функция генерирует локусы и аллели ребенка, из локусов и аллелей родителецй
 Вход:
-
-
-Выход:
 1) Локусы матери с значениями аллелей в формате: 
     {'D20S1082_1': 11.0, 'D20S1082_2': 16.0, 'D6S474_1': 14.0, 'D6S474_2': 15.0, 'D14S1434_1': 11.0, 'D14S1434_2': 14.0,
     'D4S2666_1': 11.0, 'D4S2666_2': 9.0, 'D1S1677_1': 14.0, 'D1S1677_2': 14.0, 'D11S4463_1': 14.0, 'D11S4463_2': 16.0,
@@ -305,6 +302,10 @@ def protection_against_incest(ind_1, ind_2):
 
 2)  Локусы отца в формате:
     {'D20S1082_1': 15.0, 'D20S1082_2': 16.0, 'D6S474_1': 15.0, 'D6S474_2': 16.0, 'D14S1434_1': 10.0, ...
+
+Вход:
+1) Локусы ребенка в формате:
+    {'D20S1082_1': 11.0, 'D20S1082_2': 11.0, 'D6S474_1': 17.0, 'D6S474_2': 16.0, 'D14S1434_1': 14.0...
 '''
 def create_children(mather, father):
     children = {}
@@ -335,6 +336,90 @@ def create_children(mather, father):
             list_allel_f = []
             calc = 0
     return children
+
+'''
+Функция добовления внуков от детей в таблицу
+
+Вход:
+Функция для добавления потомков в таблицу
+1) df — исходный датафрейм с родительскими генами:
+
+             D20S1082_1  D20S1082_2  D6S474_1  ...  D7S1517_2  Penta E_1  Penta E_2
+YAK1               11.0        12.0      16.0  ...       19.0       21.0       19.0
+YAK2               11.0        13.0      18.0  ...       25.0       20.0       10.0
+YAK1+YAK2-1        12.0        13.0      18.0  ...       25.0       21.0       10.0
+YAK1+YAK2-2        12.0        11.0      16.0  ...       25.0       19.0       20.0
+YAK3               11.0        15.0      15.0  ...       20.0       16.0       21.0
+YAK4               16.0        11.0      15.0  ...       22.0       19.0       16.0
+YAK3+YAK4-1        15.0        11.0      14.0  ...       22.0       21.0       19.0
+YAK3+YAK4-2        11.0        16.0      15.0  ...       22.0       16.0       16.0
+
+[8 rows x 50 columns]
+
+2) num_children — количество потомков, создаваемых для каждой пары родителей: 2
+
+Выход: Дата фрейм c детьми:
+
+                               D20S1082_1  D20S1082_2  ...  Penta E_1  Penta E_2
+YAK1                                 11.0        12.0  ...       21.0       19.0
+YAK4                                 16.0        11.0  ...       19.0       16.0
+YAK1+YAK2-2                          12.0        11.0  ...       19.0       20.0
+YAK3+YAK4-2                          11.0        16.0  ...       16.0       16.0
+(YAK1+YAK2-2)+(YAK3+YAK4-2)-1        11.0        16.0  ...       20.0       16.0
+(YAK1+YAK2-2)+(YAK3+YAK4-2)-2        12.0        16.0  ...       19.0       16.0
+YAK2                                 11.0        13.0  ...       20.0       10.0
+YAK3                                 11.0        15.0  ...       16.0       21.0
+YAK1+YAK2-1                          12.0        13.0  ...       21.0       10.0
+YAK3+YAK4-1                          15.0        11.0  ...       21.0       19.0
+(YAK1+YAK2-1)+(YAK3+YAK4-1)-1        13.0        15.0  ...       21.0       21.0
+(YAK1+YAK2-1)+(YAK3+YAK4-1)-2        12.0        15.0  ...       21.0       21.0
+
+[12 rows x 50 columns]
+'''
+
+def add_children(df, num_children=1):
+    dft = df.transpose()
+    dict_data = dft.to_dict()
+    del_dict_data = dict_data
+    return_dict_data = {}
+    len_grandparents = 0
+
+    # Считаем колличество индивидов 1 поколения
+    for human, gen_data in dict_data.items():
+        if '+' not in human:
+            len_grandparents += 1
+            return_dict_data[human] = gen_data
+
+    while len(del_dict_data) != len_grandparents:
+        human = random.choices(list(del_dict_data))[0]
+        if '+' in human:
+
+            # Подбираем партнера
+            flag_main = True
+            while flag_main:
+
+                candidate = random.choices(list(del_dict_data))[0]
+                if '+' in candidate:
+
+                    # проверяем не будет ли это инцестом
+                    if not protection_against_incest(human, candidate):
+
+                        # удаляем индивидов, дабы еще раз их не выбрать
+                        if human in del_dict_data and candidate in del_dict_data:
+
+                            return_dict_data[human] = del_dict_data[human]
+                            return_dict_data[candidate] = del_dict_data[candidate]
+
+                            # Генерируем детей
+                            for i in range(1, num_children + 1):
+                                children = create_children(del_dict_data[human], del_dict_data[candidate])
+                                name_children = f"({human})+({candidate})—{i}"
+                                return_dict_data[name_children] = children
+
+                            flag_main = False
+                            _ = del_dict_data.pop(human)
+                            _ = del_dict_data.pop(candidate)
+    return pd.DataFrame(return_dict_data).transpose()
 
 '''
 Функция добовления детей от детей в таблицу
@@ -404,14 +489,14 @@ def add_children_from_children(df, num_children=1):
             if calc == 1 or calc == 2:
                 global_calc += 1
                 if list_progenitors.index(individ) + 3 > len(list_progenitors):
-                    name_father = list_progenitors[list_progenitors.index(individ) + 2 - len(individ)]
+                    name_father = list_progenitors[list_progenitors.index(individ) + 2 - len(list_progenitors)]
                 else:
                     name_father = list_progenitors[list_progenitors.index(individ) + 2]
 
                 new_dict[individ] = dict_data[individ]
                 new_dict[name_father] = dict_data[name_father]
 
-                for i in range(1, num_children):
+                for i in range(1, num_children+1):
 
                     children = create_children(dict_data[individ], dict_data[name_father])
                     #print('Children', global_calc)
@@ -420,7 +505,12 @@ def add_children_from_children(df, num_children=1):
                     #print('Children', children)
 
                     name_children = f"{individ}+{name_father}/{i}"
+
                     new_dict[name_children] = children
+
+            else:
+                new_dict[individ] = dict_data[individ]
+                new_dict[name_father] = dict_data[name_father]
 
         # Условие на перенос бабушек и дедушек в новый список
         else:

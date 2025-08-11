@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Добавлен вайл description в котором представленно описание проекта!">
-      <change afterPath="$PROJECT_DIR$/test/CountingLR/CountingLR.py" afterDir="false" />
+    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Инициализированна разработка LR!">
+      <change afterPath="$PROJECT_DIR$/src/countingLR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/external_function.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/CountingLR/Разбираемся в генетике вопроса.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Что сделать.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descriptopn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/child_maker.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config_file.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config_file.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/creator_of_individuals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/creator_of_individuals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/external_function.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/find_father.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/find_father.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/normalizated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/normalizated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/сalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/сalculation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CountingLR/CountingLR.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/CountingLR/mainLR.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,26 +52,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.CountingLR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.child_maker.executor&quot;: &quot;Run&quot;,
-    &quot;Python.countingFREQUENCIES.executor&quot;: &quot;Run&quot;,
-    &quot;Python.countingLR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.creator_of_individuals.executor&quot;: &quot;Run&quot;,
-    &quot;Python.external_function.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_pi.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.normalizated.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.сalculation.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_countingLR.TestSiblingsCountingLR.test_abab_case.executor": "Run",
+    "Python tests.Python tests for test_countingLR.TestSiblingsCountingLR.test_different_locus.executor": "Run",
+    "Python tests.Python tests in test_countingLR.py.executor": "Run",
+    "Python.CountingLR.executor": "Run",
+    "Python.child_maker.executor": "Run",
+    "Python.countingFREQUENCIES.executor": "Run",
+    "Python.countingLR.executor": "Run",
+    "Python.creator_of_individuals.executor": "Run",
+    "Python.external_function.executor": "Run",
+    "Python.generate_pi.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mainLR.executor": "Run",
+    "Python.normalizated.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test2.executor": "Run",
+    "Python.test3.executor": "Run",
+    "Python.сalculation.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test/CountingLR" />
@@ -81,7 +85,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="LAAAS" />
       <option name="ENV_FILES" value="" />
@@ -128,10 +132,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_countingLR.TestSiblingsCountingLR.test_abab_case" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LAAAS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unittest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_countingLR.TestSiblingsCountingLR.test_abab_case&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_countingLR.TestSiblingsCountingLR.test_different_locus" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LAAAS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unittest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_countingLR.TestSiblingsCountingLR.test_different_locus&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.normalizated" />
+      <item itemvalue="Python tests.Python tests for test_countingLR.TestSiblingsCountingLR.test_abab_case" />
+      <item itemvalue="Python tests.Python tests for test_countingLR.TestSiblingsCountingLR.test_different_locus" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_countingLR.TestSiblingsCountingLR.test_abab_case" />
+        <item itemvalue="Python tests.Python tests for test_countingLR.TestSiblingsCountingLR.test_different_locus" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -205,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742193904243</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Инициализированна разработка LR!">
+      <option name="closed" value="true" />
+      <created>1744818964991</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744818964991</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +277,7 @@
     <MESSAGE value="Сделана функция считывания частот&#10;&#10;Начата разработка модуля нормализации файла" />
     <MESSAGE value="Сделана функция перевода частот в вид exel таблицы" />
     <MESSAGE value="Добавлен вайл description в котором представленно описание проекта!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен вайл description в котором представленно описание проекта!" />
+    <MESSAGE value="Инициализированна разработка LR!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Инициализированна разработка LR!" />
   </component>
 </project>

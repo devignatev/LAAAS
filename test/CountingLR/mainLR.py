@@ -34,7 +34,7 @@ def countingLR():
 
     # Сколько индивидов генерируем
     name_of_individuals = {
-        'YAK': 12
+        'YAK': 100
     }
 
     # Запускаем генерацию 1 звена
@@ -42,12 +42,14 @@ def countingLR():
     print(df)
 
     # Запускаем генерацию 2 звена
-    df = create_2(df, 2)
+    df = create_2(df, 4)
     print(df)
 
     # Запускаем генерацию 3 звена
-    df = create_3(df, 2)
+    df = create_3(df, 4)
     print(df)
+
+    print(frequencies)
 
     df.to_excel('/Users/mihailignatev/PycharmProjects/LAAAS/test/CountingLR/Files/Выход.xlsx')
 
