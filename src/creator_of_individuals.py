@@ -279,15 +279,18 @@ def add_parents(df, num_children=1):
 True
 '''
 def protection_against_incest(ind_1, ind_2):
-    list_ind_1 = ind_1.split('-')[0].split('+')
-    list_ind_2 = ind_2.split('-')[0].split('+')
-    for name_father in list_ind_1:
-        if name_father == list_ind_2[0] or name_father == list_ind_2[1]:
-            return True
+    if '+' in ind_1 or '+' in ind_2:
+        list_ind_1 = ind_1.split('-')[0].split('+')
+        list_ind_2 = ind_2.split('-')[0].split('+')
+        for name_father in list_ind_1:
+            if name_father == list_ind_2[0] or name_father == list_ind_2[1]:
+                print(ind_1, ind_2, 'ИНЦЕСТ')
+                return True
+    print(ind_1, ind_2, 'Не родственники')
     return False
 
 '''
-Функция генерирует локусы и аллели ребенка, из локусов и аллелей родителецй
+Функция генерирует локусы и аллели ребенка, из локусов и аллелей родителей
 Вход:
 1) Локусы матери с значениями аллелей в формате: 
     {'D20S1082_1': 11.0, 'D20S1082_2': 16.0, 'D6S474_1': 14.0, 'D6S474_2': 15.0, 'D14S1434_1': 11.0, 'D14S1434_2': 14.0,

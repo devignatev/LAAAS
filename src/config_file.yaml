@@ -87,21 +87,25 @@ rus_dict: {"CSF1PO": {7: 0.0004, 8: 0.0012, 9: 0.0438, 10: 0.2824, 11: 0.2882, 1
            }
 
 # Путь до файла на основании которого parents_maker.py будет генерировать детей
-output_file_path_creator_of_individuals: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Creator_of_individuals/output_individ.xlsx'
-output_file_path_creator_of_individuals_join: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Creator_of_individuals/output_join.xlsx'
+output_file_path_creator_of_individuals: 'files/Creator_of_individuals/output_individ.xlsx'
+output_file_path_creator_of_individuals_join: 'files/Creator_of_individuals/output_join.xlsx'
 
-output_file_path_parents_maker: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Creator_of_individuals/output_parents.xlsx'
+output_file_path_parents_maker: 'files/Creator_of_individuals/output_parents.xlsx'
 
-output_file_path_children_maker: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Creator_of_individuals/output_children.xlsx'
+output_file_path_children_maker: 'files/Creator_of_individuals/output_children.xlsx'
 
 # Колличество родителей которое нужно сгенерировать
-parents_maker_nums: 4
+parents_maker_nums: 2
 
 # Колличество внуков которое нужно сгенерировать
-children_maker_nums: 4
+children_maker_nums: 2
 
 # ==============================normalizated==============================
-normalization_input_file: '/Users/mihailignatev/PycharmProjects/LAAAS/files/External files/KV files/якуты.xlsx'
+normalization_input_file: 'files/External_files/KV_files/якуты.xlsx'
 
 # ==============================find father==============================
-output_file_path_find_father: '/Users/mihailignatev/PycharmProjects/LAAAS/files/Find father/output_find.xlsx'
+output_file_path_find_father: 'files/Find_father/output_find.xlsx'
+
+# ==============================countingLR==============================
+output_file_path_lr_siblings_xlsx: 'files/LR/output_lr_siblings.xlsx'
+output_file_path_lr_siblings_csv: 'files/LR/output_lr_siblings.csv'

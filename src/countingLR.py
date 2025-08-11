@@ -1,4 +1,5 @@
 import pandas as pd
+import src.creator_of_individuals as CoI
 
 
 def formula_aaab(pa, pb):
@@ -220,14 +221,18 @@ def testLR():
     for i in genotypes_data:
         print(local_siblings_countingLR(i, allele_frequencies))
 
-def find_and_countingLR_in_brothers(person, el_split, dict_data, allele_frequencies):
-    lr_dict = {}
-    for brother in list(dict_data):
-        if len(brother.split('+')) == len(person.split('+')):
-            if brother != person:
-                lr = local_siblings_countingLR(dict_data[person], dict_data[brother], allele_frequencies)
-                lr_dict[brother] = lr
-    return {person: lr_dict}
+def find_and_countingLR_in_brothers(person, list_of_candidates, allele_frequencies, dict_data):
+    lr_list = []
+    for brother in list_of_candidates:
+        if brother != person:
+            dict = {}
+            lr = local_siblings_countingLR(dict_data[person], dict_data[brother], allele_frequencies)
+            dict['person'] = person
+            dict['checked'] = brother
+            dict['lr'] = lr
+            dict['relatives'] = CoI.protection_against_incest(person, brother)
+            lr_list.append(dict)
+    return lr_list
 
 
 
@@ -236,20 +241,18 @@ def find_and_countingLR_in_brothers(person, el_split, dict_data, allele_frequenc
 
 def siblings_countingLR(df, allele_frequencies, number_children, number_grandchildren):
     dft = df.transpose()
-    return_dict = {}
+    return_list = []
     dict_data = dft.to_dict()
     for person in list(dict_data):
-        if '+' in person:
-            if len(person.split('+')) > 2:
-                # значит это (YAK1+YAK2-3)+(YAK7+YAK8-4)—2
-                counting_dict = find_and_countingLR_in_brothers(person, '—', dict_data,
-                                                                allele_frequencies)
-            else:
-                # значит это YAK1+YAK2-3
-                counting_dict = find_and_countingLR_in_brothers(person, '-', dict_data,
-                                                                allele_frequencies)
-            #print('counting_dict', counting_dict)
-            return_dict = return_dict | counting_dict
-            #print('return_dict', return_dict)
-    new_df = pd.DataFrame(return_dict)
+        list_of_candidates = []
+        for candidates in list(dict_data):
+            if len(person.split('+')) == len(candidates.split('+')):
+                list_of_candidates.append(candidates)
+        # значит это (YAK1+YAK2-3)+(YAK7+YAK8-4)—2
+        counting_list = find_and_countingLR_in_brothers(person, list_of_candidates,
+                                                        allele_frequencies, dict_data)
+        #print('counting_dict', counting_dict)
+        return_list = return_list + counting_list
+        #print('return_dict', return_dict)
+    new_df = pd.DataFrame(return_list)
     return new_df

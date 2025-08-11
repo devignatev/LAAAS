@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  laaas:
+    build: .
+    volumes:
+      - ./files:/app/files  # Монтируем всю папку files
+      - ./src:/app/src      # Монтируем исходный код
+    environment:
+      - PYTHONPATH=/app
