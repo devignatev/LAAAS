@@ -18,16 +18,16 @@ def normalizated(df):
     df_1_2 = ef.uniqueness_locus(df)
 
     # Считаем частоты
-    frequencies = CALC.counting_frequencies_from_file(df_1_2)
+    dict_allel = CALC.counting_allel_from_file(df_1_2)
+    ef.frequencies_in_exel(dict_allel, 'allel_A28.xlsx')
+    frequencies = CALC.counting_frequencies(dict_allel)
 
-    sum = 0
     for i in frequencies:
-        for j in frequencies[i]:
-            sum += frequencies[i][j]
-        print(i, sum)
-        sum = 0
+        print(i, sum(frequencies[i].values()))
 
     print(frequencies)
+
+    ef.frequencies_in_exel(frequencies, 'FR_ASTR_A28_AVAR_189.xlsx')
 
 
 
@@ -36,5 +36,5 @@ if __name__ == '__main__':
     with open(path_config, 'r') as yaml_file:
         config = yaml.load(yaml_file, Loader=yaml.FullLoader)
 
-    df = pd.read_excel(config['normalization_input_file'], index_col=0, sheet_name='ЯКУТЫ')
+    df = pd.read_excel(config['normalization_input_file'], index_col=0)
     normalizated(df)

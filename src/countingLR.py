@@ -42,10 +42,13 @@ def formula_aa(pa):
 
 def formula_ab(pa, pb):
     return 2 * pa * (2 - pa) * pb * (2 - pb) - 2 * pa * pb * 2 * pa * pb
-'''
-Вход:
 
-Выход
+
+'''
+Функция которая считает гипотезу родства
+Вход: (10, 10), (10, 10), {'CSF1P0': {10: 0.2, 11: 0.3, 12: 0.4, 13: 0.1}}, 'CSF1P0'
+
+Выход: 1
 '''
 def p_calculation_for_siblings(genotype_1, genotype_2, fr, loc):
     list = fr[loc]
@@ -158,6 +161,12 @@ def p_calculation_for_siblings(genotype_1, genotype_2, fr, loc):
                 #print('(a b c d) or (a b d c)')
                 return formula_abcd(p1, p2, p3, p4)
 
+'''
+Функция которая анти-считает гипотезу родства
+Вход: (10, 10), {'CSF1P0': {10: 0.2, 11: 0.3, 12: 0.4, 13: 0.1}}, 'CSF1P0'
+
+Выход: formula_aa() or formula_ab()
+'''
 def inv_p_calculation_for_siblings(genotype_1, fr, loc):
     list = fr[loc]
     p1 = list[genotype_1[0]]
@@ -170,6 +179,7 @@ def inv_p_calculation_for_siblings(genotype_1, fr, loc):
     else:
         # ab or ba
         return formula_ab(p1, p2)
+
 
 def local_siblings_countingLR(genotype_person, genotype_brother, allele_frequencies):
     calc = 0
@@ -233,10 +243,6 @@ def find_and_countingLR_in_brothers(person, list_of_candidates, allele_frequenci
             dict['relatives'] = CoI.protection_against_incest(person, brother)
             lr_list.append(dict)
     return lr_list
-
-
-
-
 
 
 def siblings_countingLR(df, allele_frequencies, number_children, number_grandchildren):

@@ -1,5 +1,8 @@
 from pandas.core.methods.to_dict import to_dict
 from decimal import Decimal, getcontext
+
+from test import dict_l
+
 '''
 Функция которая расчитывает значение q, которое например нужно для расчета pp, pi
 
@@ -66,13 +69,13 @@ def calculation_pi_and_pp(dict_mother, dict_children, frequency):
 Дата фрейм (pandas)
 
 Выход:
-Словарь частот, к примеру какой-то такой:
-{'D20S1082': {11.0: 0.46258503401360546, 15.0: 0.2653061224489796, 12.0: 0.14965986394557823, 16.0: 0.05442176870748299,
-14.0: 0.04081632653061224, 13.0: 0.02040816326530612, 9.0: 0.006802721088435374}, 'D6S474': {15: 0.20134228187919462,
-14: 0.3288590604026846, 18.0: 0.21476510067114093, 17.0: 0.08053691275167785, 16.0: 0.174496644295302}, ... }
+Словарь повторений, к примеру какой-то такой:
+{'D20S1082': {11: 164, 13: 9, 15: 113, 12: 26, 14: 42, 16: 22, 9: 2}, 
+'D6S474': {15: 82, 17: 82, 14: 100, 16: 72, 13: 13, 18: 27, 0: 2}, 
+'D12ATA63': {12: 80, 13: 65, 15: 45, 18: 19, 16: 6, 17: 135, 19: 7, 14: 21}}
 '''
 
-def counting_frequencies_from_file(df):
+def counting_allel_from_file(df):
     frequencies = {}
     locus_list = [el.split('_')[0] for el in df.columns.to_list() if int(el.split('_')[1]) % 2 != 0]
 
@@ -84,18 +87,32 @@ def counting_frequencies_from_file(df):
             allel = df_dict[individual][locus]
             if ',' in str(allel):
                 allel = allel.replace(',', '.')
-            if str(allel) != 'nan' and str(allel) != 'OL':
+            if str(allel) != 'nan' and str(allel) != 'OL' and str(allel) != '0' and allel != 0:
                 if allel in frequencies[locus.split('_')[0]]:
                     calc = frequencies[locus.split('_')[0]][allel]
                     calc += 1
                     frequencies[locus.split('_')[0]][allel] = calc
                 else:
                     frequencies[locus.split('_')[0]][allel] = 1
+    return frequencies
 
+'''
+Вся математика тут!
+Вход: 
+{'D20S1082': {11: 164, 13: 9, 15: 113, 12: 26, 14: 42, 16: 22, 9: 2}, 
+'D6S474': {15: 82, 17: 82, 14: 100, 16: 72, 13: 13, 18: 27, 0: 2}, 
+'D12ATA63': {12: 80, 13: 65, 15: 45, 18: 19, 16: 6, 17: 135, 19: 7, 14: 21}}
+'''
+def counting_frequencies(frequencies):
     for locus in frequencies:
         summ = 0
         for calc in frequencies[locus]:
             summ += frequencies[locus][calc]
         for calc in frequencies[locus]:
-            frequencies[locus][calc] = frequencies[locus][calc]/summ
+            frequencies[locus][calc] = frequencies[locus][calc] / summ
+
+        total = sum(frequencies[locus].values())
+        for calc in frequencies[locus]:
+            frequencies[locus][calc] = frequencies[locus][calc] / total
+
     return frequencies

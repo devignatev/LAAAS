@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Огромные доработки разработка LR!">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/External files/KV files/Шаблон надежности генетической экспертизы.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/requirements.txt" afterDir="false" />
+    <list default="true" id="e4478e5a-dba2-4fb2-a0a8-3b9780ec30d6" name="Changes" comment="Реализован docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/External files/KV files/Шаблон надежности генетической экспертизы.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/External files/KV/Шаблон надежности генетической экспертизы.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config_file.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config_file.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/countingLR.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/countingLR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creator_of_individuals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/creator_of_individuals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/external_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Что сделать.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/normalizated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/normalizated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/сalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/сalculation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +77,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files/Start" />
       <recent name="$PROJECT_DIR$/files/External files/KV files" />
       <recent name="$PROJECT_DIR$/test/CountingLR" />
       <recent name="$PROJECT_DIR$/files/External files" />
       <recent name="$PROJECT_DIR$/files" />
-      <recent name="$PROJECT_DIR$/files/normalizated" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -263,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754915531787</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Реализован docker">
+      <option name="closed" value="true" />
+      <created>1754949016331</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1754949016332</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,6 +294,7 @@
     <MESSAGE value="Добавлен вайл description в котором представленно описание проекта!" />
     <MESSAGE value="Инициализированна разработка LR!" />
     <MESSAGE value="Огромные доработки разработка LR!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Огромные доработки разработка LR!" />
+    <MESSAGE value="Реализован docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализован docker" />
   </component>
 </project>

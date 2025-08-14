@@ -161,3 +161,13 @@ def individuals_sorted(df, nums_grandchild):
                     add_person.append(person)
                     return_data[person] = dict_data[person]
     return pd.DataFrame(return_data).transpose()
+
+def frequency_format_for_familias(gen_data, path_save):
+    print(gen_data)
+    with open(path_save, "a") as file:
+        for loc in gen_data:
+            file.write(f"{loc}\n")
+            list_loc = sorted(list(gen_data[loc].items()))
+            for allel in list_loc:
+                file.write(f"{allel[0]}	{round(allel[1], 4)}\n")
+            file.write(f"\n")
